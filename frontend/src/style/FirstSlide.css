@@ -1,0 +1,47 @@
+.root-wrapper{
+    display: grid;
+    grid-template-rows: 10% 30%;
+    padding: 60px;
+    
+    
+}
+.subject{
+    display: grid;
+    padding-left: 70%;
+    padding-top: 7%;
+    
+    
+}
+.subject button{
+    display: inline-block;
+    background-color: gold;
+    border-radius: 10px;
+    border: 0;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 150px;
+    width: 150px;
+    
+}
+.image img{
+    width:50%;
+    height: auto;
+}
+
+@media (max-width:800px){
+    .root-wrapper{
+        grid-template-rows: 0 0;
+        padding: 0;
+    }
+    .image img{
+        width:100%;
+      height: auto;
+      padding-top:30%;
+    }
+    .subject{
+        text-align: center;
+       padding: 0; /* DON'T CHANGE IT. ITS HERE TO AVOIDE SUBJECT GO OUT OF THE SCREEN*/
+        margin-top: 30px;
+    }
+    
+}
