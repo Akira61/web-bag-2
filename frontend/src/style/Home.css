@@ -1,6 +1,6 @@
 .slides-wrapper{
     display: grid;
-    grid-template-rows: repeat(5, 700px);
+    grid-template-rows: repeat(4, 700px);
     
     
 }

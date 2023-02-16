@@ -48,10 +48,11 @@ html,body{
         display: none;
     }
     .main-subject h1{
-        font-size: 30px;
+        font-size: 26px;
         width: 500%;
     }
     .main-subject p{
+        font-size: 23px;
         width: 500%;
         text-align: center;
     }
