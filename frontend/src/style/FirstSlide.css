@@ -21,7 +21,7 @@
     font-weight: 500;
     margin-left: 150px;
     width: 150px;
-    
+    /* background-color: #f7e05f; */
 }
 .image img{
     width:50%;
@@ -32,16 +32,22 @@
     .root-wrapper{
         grid-template-rows: 0 0;
         padding: 0;
+        
     }
     .image img{
         width:100%;
       height: auto;
-      padding-top:30%;
+      padding-top:70%;
     }
     .subject{
         text-align: center;
-       padding: 0; /* DON'T CHANGE IT. ITS HERE TO AVOIDE SUBJECT GO OUT OF THE SCREEN*/
+       padding: 0; /* DON'T CHANGE IT ITS HERE TO AVOIDE SUBJECT GO OUT OF THE SCREEN*/
         margin-top: 30px;
     }
+    .subject h1{
+        padding-bottom: 20px;
+    }
+
+    
     
 }

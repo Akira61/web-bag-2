@@ -5,8 +5,7 @@ import Order from "./routes/order";
 import Contact from "./routes/contact";
 import Login from "./routes/login";
 import Memberships from "./routes/memberships";
-import FirstSlide from "./components/FirstSlide";
-
+import Index from "./components/index";
 //styles
 
 
@@ -15,7 +14,7 @@ function App() {
     <>
       <><Navbar /></>
       <br/> <br/> <br />
-      <FirstSlide />
+      <Index />
 
       <Routes>
         <Route path="/order" element={<Order />}/>

@@ -1,0 +1,13 @@
+.slides-wrapper{
+    display: grid;
+    grid-template-rows: repeat(5, 700px);
+    
+    
+}
+
+@media (max-width:800px){
+    .slides-wrapper{
+        /* grid-template-rows: repeat(5, 600px); */
+    }
+}
+
