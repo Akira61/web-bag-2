@@ -1,3 +1,4 @@
+
 header{
     display: flex;
     justify-content: space-between;
@@ -7,8 +8,9 @@ header{
     height: 50px;
     position: fixed;
     z-index: 10000;
-    padding: 10px 100px;
+    padding: 10px 80px;
     background-color: #f0f0f0;
+    
 }
 
 
@@ -16,7 +18,7 @@ header{
     font-size: 1.8em;
     font-weight: 600;
     text-transform: uppercase;
-    color:limegreen;
+    
 }
 nav{
     font-weight: 500;

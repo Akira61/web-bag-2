@@ -1,0 +1,198 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.fourth-slide-main-wrapper{
+    display: grid;
+    margin-top: 7%;
+    background-color:darkcyan;
+    padding-bottom: 10%;
+}
+
+.fourth-subject{
+    padding:50px 50px ;
+    
+}
+
+.fourth-subject h1{
+    margin-left: 45%;
+    color: aliceblue;
+    width: 100px;
+    border: none;
+    border-bottom: 3px solid white;
+    border-radius: 10px;
+}
+.fourth-subject h5{
+    padding-top: 10px;
+    margin-left: -60px;
+    font-size: 20px;
+    text-align: center;
+    color: gold;
+
+}
+
+.memberships-card{
+    display: grid;
+    padding-top: 30px;
+    grid-template-columns: repeat(3,400px);
+    padding-left: 10%;
+    
+    
+    
+}
+
+.memberships-card ul{
+    list-style-type: none;
+    
+}
+.memberships-card li{
+    text-align: center; 
+    padding: 10px;
+}
+
+
+.selecet-membership button{
+    cursor: pointer;
+    width: 150PX;
+    height: 30px;
+    border: none;
+    background-color:#222;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 2px;
+    font-family: inherit;   
+    
+
+}
+
+
+.first-card-membership{
+    padding: 30px;
+    width: 360px;
+    height: 360px;
+    background-color: azure;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 1s;
+    
+}
+.first-card-membership:hover{
+    transition: 0.5s;
+    box-shadow: 0 5px 15px gray;
+    transform: scale(1.1);
+}
+
+.first-card-membership h3{
+    color:darkviolet;
+    font-size: 40px;
+    padding-left: 34%;
+    padding-bottom: 50px;
+}
+.first-card-membership .selecet-membership{
+    padding-top: 10%;
+    padding-left: 25%;
+}
+
+
+
+
+.recomandded-card-membership{
+    padding: 30px;
+    width: 360px;
+    height: 360px;
+    background-color: azure;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgb(84, 84, 84);
+    border-radius: 5px;
+    transition: transform 1s;
+    
+}
+.recomandded-card-membership:hover{
+    transition: 0.5s;
+    box-shadow: 0 5px 15px rgb(34, 34, 34);
+    transform: scale(1.1)
+
+}
+.recomandded-card-membership h3{
+    color: orange;
+    font-size: 40px;
+    padding-left: 34%;
+    padding-bottom: 50px;
+}
+.recomandded-card-membership .selecet-membership{
+    padding-top: 30%;
+    padding-left: 25%;
+}
+
+
+
+
+.second-card-membership{
+    
+    padding: 30px;
+    width: 360px;
+    height: 360px;
+    background-color: azure;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 1s;
+}
+.second-card-membership:hover{
+    transition: 0.5s;
+    box-shadow: 0 5px 15px gray;
+}
+.second-card-membership h3{
+    color:rgb(0, 214, 132);
+    font-size: 40px;
+    padding-left: 40%;
+    padding-bottom: 50px;
+}
+
+.second-card-membership .selecet-membership{
+    padding-top: 25%;
+    padding-left: 25%;
+    
+}
+.second-card-membership:hover{
+    transform: scale(1.1);
+}
+
+
+@media (max-width:800px){
+    .fourth-slide-main-wrapper{
+        display: grid;
+        /* margin-top: 45%; */
+        /* padding-bottom: 10%; */
+        grid-template-rows: 30% 30%;
+    }
+
+
+    .memberships-card{
+        grid-template-columns: 0;
+       padding-left: 0%;
+       
+    }
+
+    .first-card-membership{
+        
+        width: 300px;
+    }
+    .recomandded-card-wrapper{
+        padding-top: 40px;
+    }
+    .recomandded-card-membership{
+        
+        width: 300px;
+    }
+    .second-card-wrapper{
+        padding-top: 40px;
+    }
+    .second-card-membership{
+        width: 300px;
+    }
+}
+

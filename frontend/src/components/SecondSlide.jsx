@@ -1,5 +1,5 @@
 import React from 'react'
-import phoneIcon from "../images/phone-icon.png"
+import phoneIcon from "../images/second-slide.png"
 import "../style/SecondSlide.css"
 export default function SecondSlide() {
   return (

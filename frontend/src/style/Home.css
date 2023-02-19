@@ -1,13 +1,19 @@
+html{
+    scroll-behavior: smooth;
+}
+::selection {
+    color: white;
+    background-color: #f7e05f;
+}
 .slides-wrapper{
     display: grid;
-    grid-template-rows: repeat(4, 700px);
-    
-    
+    grid-template-rows: 700px 700px 700px 700px 200px 900px ;
+    font-family: inherit;    
 }
 
 @media (max-width:800px){
     .slides-wrapper{
-        /* grid-template-rows: repeat(5, 600px); */
+        grid-template-rows:400px auto auto 800px 700px ;
     }
 }
 

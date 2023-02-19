@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import openingImg from "../images/opening.png"
+import openingImg from "../images/web-dev-pes.jpg"
 import "../style/FirstSlide.css"
 export default function FirstSlide() {
   return (
@@ -12,7 +12,6 @@ export default function FirstSlide() {
       <div className="subject">
         <h1>جميع ما تحتاجها لبناء موقع ناجح</h1>
         
-        <button type="submit"><Link to="/order">! انشىء موقعك </Link></button>
       </div>
     </div>
   )

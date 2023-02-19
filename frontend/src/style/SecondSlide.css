@@ -5,7 +5,7 @@ html,body{
 }
 
 .main-wrapper{
-    background-color: pink;
+    background-color:darkturquoise;
     display: grid;
     grid-template-columns: 20% 40%;
     align-content: space-between;
@@ -52,7 +52,7 @@ html,body{
         width: 500%;
     }
     .main-subject p{
-        font-size: 23px;
+        font-size: 26px;
         width: 500%;
         text-align: center;
     }

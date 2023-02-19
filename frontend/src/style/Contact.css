@@ -1,0 +1,104 @@
+.main-form-wrapper-contact{
+    padding-top: 7%;
+}
+
+.main-form-wrapper-contact form{
+    display: grid;
+    
+    grid-template-columns: repeat(2,400px);
+    padding-bottom: 10%;
+    padding-left: 25%;
+    
+}
+
+
+.contact-h1{
+    padding-top:0;
+    margin-left: 50%;
+}
+
+
+.contact-image{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+.contact-image img{
+    width: 500px;
+}
+
+form div{
+    padding: 10%;
+    
+}
+form input , form textarea, button{
+    border: none;
+    border-bottom: 2px solid darkcyan;
+    outline: none;
+    width:100%;
+    height: 130%;
+    font-family: inherit;  
+    
+}
+
+.contact-message{
+    width: 0;
+}
+
+form textarea{
+    display: grid;
+    width: 735px;
+    resize: none;
+}
+
+
+form button{
+    border: none;
+    background-color: darkturquoise;
+    font-size: 20px;
+
+    margin-left: 70%;
+    border-radius: 4px;
+    padding: 1px;
+    cursor: pointer;
+}
+
+form button:hover{
+    background-color: rgb(0, 164, 167);
+}
+
+
+@media (max-width: 900px){
+    .main-form-wrapper-contact form{
+        display: grid;
+        
+        grid-template-columns: repeat(1,auto);
+        
+        padding-left: 0%;
+    }
+    .contact-h1{
+       margin-left: 40%;
+    }
+    .contact-image{
+        width: 100%;
+    }
+    .contact-image img{
+        width: 100%;
+    }
+    form input , form textarea, button{
+        width:100%;
+        height: auto;
+    }
+    .contact-message{
+        width: 100%;
+        height: auto;
+    }
+    form textarea{
+        display: grid;
+        width:100%;
+    }
+    form button{
+        margin-left: 0%;
+    }
+}

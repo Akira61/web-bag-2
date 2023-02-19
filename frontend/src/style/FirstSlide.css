@@ -1,18 +1,28 @@
 .root-wrapper{
     display: grid;
     grid-template-rows: 10% 30%;
-    padding: 60px;
+    padding: 0;
     
-    
+    /* background-image: url("../images/web-dev-pes.jpg");
+    background-size: 100% auto;
+    height: 1000px;
+    background-repeat: no-repeat; */
 }
 .subject{
     display: grid;
     padding-left: 70%;
     padding-top: 7%;
-    
+    color: white;
+    padding-left: 0%;
+    margin-top: -150px;
+    font-size: 25px;
     
 }
-.subject button{
+.subject h1{
+    text-align: center;
+    
+}
+/* .subject button{
     display: inline-block;
     background-color: gold;
     border-radius: 10px;
@@ -21,11 +31,12 @@
     font-weight: 500;
     margin-left: 150px;
     width: 150px;
-    /* background-color: #f7e05f; */
-}
+   
+} */
+
 .image img{
-    width:50%;
-    height: auto;
+    width:100%;
+    height: 700px;
 }
 
 @media (max-width:800px){
@@ -36,7 +47,9 @@
     }
     .image img{
         width:100%;
-      padding-top:70%;
+        height: 400px;
+      /* padding-top:70%; */
+      
     }
     .subject{
         text-align: center;
