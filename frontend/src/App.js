@@ -1,7 +1,7 @@
 import React,{useState, useRef, useEffect} from "react";
 import { Route,Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Order from "./routes/order";
+import Order from "./routes/Order";
 // import Contact from "./routes/contact";
 import Mem from "./components/FourthSlide";
 import Login from "./routes/login";
