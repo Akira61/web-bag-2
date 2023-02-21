@@ -1,11 +1,15 @@
-require("dotenv").config({path : "./.env"})
-const fastify = require("fastify")({logger: true});
+require("dotenv").config()
+const Fastify = require("fastify").default({maxParamLength : 1000})
+const fastify = Fastify;
 const path = require("path");
 const cors = require("@fastify/cors");
 const axios = require("axios");
 const fastifyEnv = require('@fastify/env');
 const mongoose = require("mongoose");
 const order = require("./database/model_1");
+const jwt = require("jsonwebtoken");
+const { kMaxLength } = require("buffer");
+
 
 // Database connection
 mongoose.connect("mongodb://127.0.0.1/web-bag", {
@@ -71,6 +75,8 @@ fastify.get("/", (req, res) => {
 fastify.register(require("./routes/contacts"),{prefix : "/"})
 
 fastify.register(require("./routes/Order"), {prefix : "/"})
+
+
 
 ;(async() => {
     try {

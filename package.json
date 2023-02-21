@@ -20,8 +20,10 @@
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
     "fastify": "^4.13.0",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.9.2",
     "node-fetch": "^2.6.9",
+    "nodemailer": "^6.9.1",
     "nodemon": "^2.0.20"
   }
 }
