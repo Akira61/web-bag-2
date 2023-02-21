@@ -13,12 +13,7 @@ import VerifyEmail from "./routes/VerifyEmail";
 
 
 function App() {
-  const [token, setToken] = useState("");
-  function getToken(T){
-    setToken(T);
-    console.log("$".repeat(30), T);
-
-  }
+  
   return (
     <>
       <><Navbar /></>
@@ -26,7 +21,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Index />} />
-        <Route SETtoken={getToken}  path="/order" element={<Order />}/>
+        <Route path="/order" element={<Order />}/>
         <Route path="/verification-email/:id" element={<VerifyEmail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />

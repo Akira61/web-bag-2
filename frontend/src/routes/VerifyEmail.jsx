@@ -1,19 +1,28 @@
 import React,{useEffect, useState} from 'react'
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams, useSearchParams } from "react-router-dom";
 import axios from 'axios'
 export default function VerifyEmail() {
-  const [resMessage, setResMessage] = useState("");
-    useEffect(() => {
-        ;(async () => {
-            const response =await axios.get(`http://localhost:9898/verificationEmail/${'shit'}`)
+
+  // if the response was created succssfully this message will change by success message from the backend 
+  const [resMessage, setResMessage] = useState("تم الغاء التحقق لي تجاوز الوقت المطلوب،الرجاء اعادة محاولة الطلب من جديد");
+  
+  
+   const token = useParams().id;
+  
+    useEffect( () => {
+        console.log('5'.repeat(30),token)
+          axios.get(`http://localhost:9898/verificationEmail/${token}`)
+          .then(response => {
             console.log("{}".repeat(20), response.data);
-            //setResMessage(response.data);
-        })()
-       
-    },[])
+            setResMessage(response.data)
+          },[])
+     
+
+    })
   return (
     <div>
-        <h3></h3>
+      <br />
+        <h3>{resMessage}</h3>
     </div>
   )
 }

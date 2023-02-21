@@ -1,6 +1,6 @@
 require("dotenv").config();
 const order = require("../database/model_1");
-const jwt = require("jsonwebtoken");
+const axios = require("axios")
 const nodemailer = require("nodemailer");
 
 async function Order(fastify, route){
@@ -48,16 +48,16 @@ async function Order(fastify, route){
 
                     //host email info
                     const hostEmail = nodemailer.createTransport({
-                        service: "outlook",
+                        service: process.env.hostService,
                         auth : {
-                            user : "fahad.61@outlook.com",
-                            pass : "F4a1H6a1D3.961",
+                            user : process.env.hostEmail,
+                            pass : process.env.hostEmailPassword,
                         }
                     });
 
                     // message subject
                     const email = {
-                        from: "fahad.61@outlook.com",
+                        from: process.env.hostEmail,
                         to : emailXSS,
                         subject : `${nameXSS} أكيد طلبك`,
                         html : `<h3> الرجاء فتح الرابط لي تأكيد طلبك ${nameXSS}</h3> <br/> <h5><a href='${verificationURL}'>الرابط</a></h5>`
@@ -81,23 +81,103 @@ async function Order(fastify, route){
        res.send("message : sorry honey xss attacks doesn't works :(")
     });
 
-    fastify.get("/verificationEmail/:token",async (req, res) => {
-        const token ="63f46fb9d8f3fa0fc158cafb";
-        
-        const exitesUser =await order.unverifiedClient.findById(token)
+    fastify.get("/verificationEmail/:orderId",async (req, res) => {
+        const id = req.params.orderId;
+        console.log("order id: ",id);
+        const exitesUser = await order.unverifiedClient.findById(id)
         
         console.log("-", exitesUser.user)
         if(exitesUser){
+            console.log("order exiests");
            const verifiedUser =new order.verifiedClient(exitesUser.user);
            await verifiedUser.save();
            exitesUser.remove();
+
            console.log("document removed");
-        }else{
-            res.send("تم الغاء التحقق لي تجاوز الوقت المطلوب،الرجاء اعادة محاولة الكلب من جديد")
+           res.send(`تم اكمال الطلب بينجاح و رقم الفاتورة هو `+ "\n"+ `رقم الفاتورة : ${exitesUser.user.Bill}`+ "\n"+ `سويف يتم التواصل معك في اقرب وقت و تحديد موعد الاجتماع عن طريق تطبيق  zoom`)
+
+           // send to discord message contains order details
+            discordHook(
+                exitesUser.user.name,
+                exitesUser.user.Email,
+                exitesUser.user.Phone_Number,
+                exitesUser.user.member_ship,
+                exitesUser.user.Bill,
+                exitesUser.user.Date,
+                process.env.discordOrderHook
+            )
+
         }
+
        })
     
 }
+
+
+
+
+
+
+// function for sending discord hook contains order details
+function discordHook(name, email, phone_number= null, membership=null, bill=null,date ,env){
+    
+    let params = {
+        username: "web bag contact",
+        
+        content: "",
+        embeds: [
+          {
+            title: "new order",
+            color: 15258703,
+            thumbnail: {
+              url: "https://i.pinimg.com/originals/fc/9f/19/fc9f191914dc0e9ec0bbb054a9a15257.jpg",
+            },
+            fields: [
+                {
+                    name : "name : ",
+                    value: name,
+                    inline: false,
+                },
+                {
+                    name : "email : ",
+                    value: email,
+                    inline: false,
+                },
+                {
+                    name : "phone number : ",
+                    value: phone_number,
+                    inline: false,
+                },
+                {
+                    name : "membership : ",
+                    value: membership,
+                    inline: false,
+                },
+                {
+                    name : "bill : ",
+                    value: bill,
+                    inline: false,
+                },
+                {
+                    name : "Date : ",
+                    value: date,
+                    inline: false,
+                },
+                {
+                    name: "mention:",
+                    value:'\n\n' + "@here",
+                    inline: true,
+                  },
+            ],
+          },
+        ],
+      };
+      
+        axios.post(env, params);
+      
+}
+
+
 
 
 module.exports = Order;

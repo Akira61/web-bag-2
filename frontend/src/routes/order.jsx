@@ -1,9 +1,7 @@
 import axios from 'axios';
-import React,{useState, useTransition} from 'react'
-import { useNavigate } from 'react-router-dom';
-import VerifyEmail from './VerifyEmail';
+import React,{useState} from 'react'
 import "../style/Contact.css"
-export default function Order({SETtoken}) {
+export default function Order() {
 
 const [membership, setMemebership] = useState("");
 const [name, setName] = useState("");
@@ -13,17 +11,15 @@ const [phone, setPhone] = useState("");
 const [resMessage, setResMessage] = useState("");
 
 
+//sending order info to the backend
 async function SendOrder(e){
-  console.log("(".repeat(30),membership)
   e.preventDefault();
   const response = await axios.post("http://127.0.0.1:9898/new-order", {name, email, phone, membership});
   const data = await response.data
   console.log("%".repeat(40),data);
-  const navigate = useNavigate()
-  navigate('/verification-email/:id', { state: {token:data} });
-  await setResMessage(data);
-  await SETtoken(resMessage);
+  setResMessage(response.data);
 }
+
 
   return (
     <div>
